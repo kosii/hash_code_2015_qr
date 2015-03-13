@@ -130,11 +130,11 @@ def optimal_server_placements(R, S, U, P, M, unavailable, machines):
     assert len(all_server) == M
 
     # machines by row
-    return list(
-        itertools.chain(
-            *[[machine + (i, ) for (i, machine) in enumerate(sorted(row_machines, key=itemgetter(2)))] for (row, row_machines) in itertools.groupby(sorted(all_server, key=itemgetter(1)), key=itemgetter(1))]
-        )
-    )
+    # return list(
+    #     itertools.chain(
+    #         *[[machine + (i, ) for (i, machine) in enumerate(sorted(row_machines, key=itemgetter(2)))] for (row, row_machines) in itertools.groupby(sorted(all_server, key=itemgetter(1)), key=itemgetter(1))]
+    #     )
+    # )
     return all_server
 
     return sorted(all_server, key=itemgetter(1))
